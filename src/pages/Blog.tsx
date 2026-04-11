@@ -89,18 +89,17 @@ const posts: Post[] = [
 const categories = ['All', ...Array.from(new Set(posts.map((p) => p.category)))];
 
 /* ─── Category badge colours ─────────────────────────────────────────────── */
-const badgeStyle: Record<string, { bg: string; text: string; border: string }> = {
-  'Secured Loans': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
-  'Analysis': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
-  Insurance:      { bg: 'rgba(16,185,129,0.1)',  text: '#059669', border: 'rgba(16,185,129,0.2)'  },
+// const badgeStyle: Record<string, { bg: string; text: string; border: string }> = {
+//   'Secured Loans': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
+//   'Analysis': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
+//   Insurance:      { bg: 'rgba(16,185,129,0.1)',  text: '#059669', border: 'rgba(16,185,129,0.2)'  },
 
-  Loans:          { bg: 'rgba(249,115,22,0.1)',  text: '#EA580C', border: 'rgba(249,115,22,0.2)'  },
-  Investing:      { bg: 'rgba(232,169,32,0.12)', text: '#C9891A', border: 'rgba(232,169,32,0.25)' },
-};
+//   Loans:          { bg: 'rgba(249,115,22,0.1)',  text: '#EA580C', border: 'rgba(249,115,22,0.2)'  },
+//   Investing:      { bg: 'rgba(232,169,32,0.12)', text: '#C9891A', border: 'rgba(232,169,32,0.25)' },
+// };
 
 /* ─── Blog card ──────────────────────────────────────────────────────────── */
 const BlogCard: React.FC<{ post: Post }> = ({ post }) => {
-  const badge = badgeStyle[post.category] ?? { bg: '#F8FAFC', text: '#475569', border: '#E2E8F0' };
 
   return (
     <motion.article
