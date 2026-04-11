@@ -8,6 +8,8 @@ export interface Service {
   description: string;
   features: string[];
   link: string;
+  image?: string;    // Optional path to card image
+  category?: string; // Optional display category label
 }
 
 // ─── Testimonial ─────────────────────────────────────────────────────────────

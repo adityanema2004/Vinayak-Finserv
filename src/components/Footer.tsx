@@ -16,26 +16,31 @@ const Footer: React.FC = () => {
   ];
 
   const services = [
-    { label: 'Mutual Funds & SIP', path: '/services' },
+    { label: 'Commercial Vehicle Loans', path: '/services' },
     { label: 'Life & Health Insurance', path: '/services' },
     { label: 'Home & Personal Loans', path: '/services' },
-    { label: 'Fixed Deposits', path: '/services' },
-    { label: 'Tax Planning', path: '/services' },
+    { label: 'Business Loans', path: '/services' },
+    { label: 'Loan Against Property', path: '/services' },
     { label: 'Financial Planning', path: '/services' },
   ];
 
   return (
-    <footer className="bg-[#0A1628] text-white">
+    <footer style={{ background: '#0D2447', color: '#ffffff' }}>
       {/* Main Footer */}
       <div className="container-site py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1 — Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2.5 mb-5 group">
-              <img src="/Vinayak Finserv logo.png" alt="Vinayak Finserv Logo" className="h-16 w-auto group-hover:scale-105 transition-transform" />
+              <img
+                src="/Vinayak Finserv logo.png"
+                alt="Vinayak Finserv Logo"
+                className="h-16 w-auto group-hover:scale-105 transition-transform"
+                style={{ filter: 'brightness(1.05)' }}
+              />
             </Link>
             <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
-              Your trusted financial partner since 2014. We help individuals and families in India build lasting wealth through expert, personalised financial guidance.
+              Your trusted financial partner since 2014. We help individuals and businesses in India secure their financial future through expert, personalised intermediation.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-3">
@@ -49,7 +54,22 @@ const Footer: React.FC = () => {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#C9A84C]/20 border border-white/10 hover:border-[#C9A84C]/40 flex items-center justify-center text-white/60 hover:text-[#C9A84C] transition-all duration-200"
+                  className="w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-200"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    borderColor: 'rgba(255,255,255,0.12)',
+                    color: 'rgba(255,255,255,0.55)',
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(232,169,32,0.18)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,169,32,0.45)';
+                    (e.currentTarget as HTMLElement).style.color = '#E8A920';
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.06)';
+                    (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.12)';
+                    (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.55)';
+                  }}
                 >
                   {svg}
                 </a>
@@ -59,7 +79,10 @@ const Footer: React.FC = () => {
 
           {/* Column 2 — Quick Links */}
           <div>
-            <h3 className="font-heading text-white font-semibold text-lg mb-5 pb-2 border-b border-[#C9A84C]/30">
+            <h3
+              className="font-heading text-white font-semibold text-lg mb-5 pb-2"
+              style={{ borderBottom: '1px solid rgba(232,169,32,0.35)' }}
+            >
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -67,9 +90,9 @@ const Footer: React.FC = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="font-body text-white/60 hover:text-[#C9A84C] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                    className="font-body text-white/60 hover:text-[#E8A920] text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#C9A84C]/50 group-hover:bg-[#C9A84C] transition-colors" />
+                    <span className="w-1 h-1 rounded-full bg-[#E8A920]/50 group-hover:bg-[#E8A920] transition-colors" />
                     {link.label}
                   </Link>
                 </li>
@@ -79,7 +102,10 @@ const Footer: React.FC = () => {
 
           {/* Column 3 — Services */}
           <div>
-            <h3 className="font-heading text-white font-semibold text-lg mb-5 pb-2 border-b border-[#C9A84C]/30">
+            <h3
+              className="font-heading text-white font-semibold text-lg mb-5 pb-2"
+              style={{ borderBottom: '1px solid rgba(232,169,32,0.35)' }}
+            >
               Our Services
             </h3>
             <ul className="space-y-3">
@@ -87,9 +113,9 @@ const Footer: React.FC = () => {
                 <li key={service.label}>
                   <Link
                     to={service.path}
-                    className="font-body text-white/60 hover:text-[#C9A84C] text-sm transition-colors duration-200 flex items-center gap-2 group"
+                    className="font-body text-white/60 hover:text-[#E8A920] text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
-                    <span className="w-1 h-1 rounded-full bg-[#C9A84C]/50 group-hover:bg-[#C9A84C] transition-colors" />
+                    <span className="w-1 h-1 rounded-full bg-[#E8A920]/50 group-hover:bg-[#E8A920] transition-colors" />
                     {service.label}
                   </Link>
                 </li>
@@ -99,12 +125,15 @@ const Footer: React.FC = () => {
 
           {/* Column 4 — Contact */}
           <div>
-            <h3 className="font-heading text-white font-semibold text-lg mb-5 pb-2 border-b border-[#C9A84C]/30">
+            <h3
+              className="font-heading text-white font-semibold text-lg mb-5 pb-2"
+              style={{ borderBottom: '1px solid rgba(232,169,32,0.35)' }}
+            >
               Head Office
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-[#E8A920] mt-0.5 flex-shrink-0" />
                 <span className="font-body text-white/60 text-sm leading-relaxed">
                   Vinayak Finserv,<br />
                   Civil Lines, Raipur,<br />
@@ -112,19 +141,19 @@ const Footer: React.FC = () => {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-[#C9A84C] flex-shrink-0" />
-                <a href="tel:+919876543210" className="font-body text-white/60 hover:text-[#C9A84C] text-sm transition-colors">
+                <Phone className="w-4 h-4 text-[#E8A920] flex-shrink-0" />
+                <a href="tel:+919876543210" className="font-body text-white/60 hover:text-[#E8A920] text-sm transition-colors">
                   +91 98765 43210
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-[#C9A84C] flex-shrink-0" />
-                <a href="mailto:info@vinayakfinserv.com" className="font-body text-white/60 hover:text-[#C9A84C] text-sm transition-colors">
+                <Mail className="w-4 h-4 text-[#E8A920] flex-shrink-0" />
+                <a href="mailto:info@vinayakfinserv.com" className="font-body text-white/60 hover:text-[#E8A920] text-sm transition-colors">
                   info@vinayakfinserv.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Clock className="w-4 h-4 text-[#C9A84C] flex-shrink-0" />
+                <Clock className="w-4 h-4 text-[#E8A920] flex-shrink-0" />
                 <span className="font-body text-white/60 text-sm">
                   Mon – Sat, 9:30 AM – 6:30 PM
                 </span>
@@ -135,26 +164,31 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Disclaimer */}
-      <div className="border-t border-white/10">
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
         <div className="container-site py-4">
           <p className="font-body text-white/35 text-xs text-center leading-relaxed">
-            <strong className="text-white/50">Disclaimer:</strong> Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing. Past performance is not indicative of future results. Insurance is the subject matter of solicitation. Vinayak Finserv is a SEBI Registered Investment Advisor. AMFI ARN: XXXXXX.
+            <strong className="text-white/50">Disclaimer:</strong> Financial products such as loans and insurance are subject to institutional terms and conditions. Please read all related documents carefully. Insurance is the subject matter of solicitation.
           </p>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 bg-black/20">
+      <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', background: 'rgba(0,0,0,0.18)' }}>
         <div className="container-site py-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="font-body text-white/50 text-xs">
               © {currentYear} Vinayak Finserv. All rights reserved.
             </p>
             <div className="flex items-center gap-4 flex-wrap justify-center">
-              {['SEBI Registered', 'AMFI Certified', 'IRDAI Authorised'].map((badge) => (
+              {['IRDAI Authorised', 'Trusted Advisors', 'Secure Platform'].map((badge) => (
                 <span
                   key={badge}
-                  className="text-xs font-body font-medium text-[#C9A84C]/80 border border-[#C9A84C]/20 px-3 py-1 rounded-full"
+                  className="text-xs font-body font-semibold rounded-full px-3 py-1"
+                  style={{
+                    color: '#E8A920',
+                    border: '1px solid rgba(232,169,32,0.25)',
+                    background: 'rgba(232,169,32,0.07)',
+                  }}
                 >
                   {badge}
                 </span>

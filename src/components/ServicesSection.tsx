@@ -9,58 +9,48 @@ import type { Service } from '../types';
 
 const services: Service[] = [
   {
-    id: 'mutual-funds',
-    icon: 'TrendingUp',
-    title: 'Mutual Funds & SIP',
-    tagline: 'Start from ₹500/month',
-    description: 'Build long-term wealth with goal-based mutual fund portfolios and disciplined SIP plans curated to your risk profile.',
-    features: ['Goal-based fund selection', 'Risk profiling', 'Quarterly portfolio review', 'Tax-efficient ELSS funds'],
+    id: 'secured-loans',
+    icon: 'Home',
+    title: 'Secured Loans',
+    tagline: 'Lowest interest rates & maximum tenure',
+    description: 'We help you secure funds against your assets with competitive rates from India\'s top lenders, ensuring maximum LTV and minimal hassle.',
+    features: ['Loan Against Property (LAP)', 'Home Loans', 'Overdraft (OD) / Cash Credit (CC)', 'Balance Transfer & Top-up'],
     link: '/services',
+    image: '/service-loans.png',
+    category: 'Loan',
+  },
+  {
+    id: 'unsecured-loans',
+    icon: 'TrendingUp',
+    title: 'UnSecured Loans',
+    tagline: 'Quick approval, zero collateral',
+    description: 'When you need funds instantly without pledging assets, we arrange hassle-free personal and business loans from leading NBFCs and banks.',
+    features: ['Personal Loans', 'Business Loans without collateral', 'Professional Loans (Doctors/CAs)', 'Short-term working capital'],
+    link: '/services',
+    image: '/service-financial-planning.png',
+    category: 'Loan',
+  },
+  {
+    id: 'cv-loans',
+    icon: 'FileText',
+    title: 'Commercial Vehicle Loan',
+    tagline: 'Accelerate your business growth',
+    description: 'Expand your transport business with flexible funding for all types of commercial vehicles, tailored for fleet owners and individual operators.',
+    features: ['Funding for New & Used CVs', 'Construction Equipment Loans', 'Refinance on existing vehicles', 'Customised repayment schedules'],
+    link: '/services',
+    image: '/service-fd.png',
+    category: 'Loan',
   },
   {
     id: 'insurance',
     icon: 'Shield',
     title: 'Life & Health Insurance',
     tagline: 'Protect what matters most',
-    description: 'Comprehensive life and health coverage from 15+ leading insurers. We compare, advise, and assist with claims.',
-    features: ['Term & ULIP plans', 'Family floater health', 'Critical illness cover', 'Zero-hassle claims'],
+    description: 'Comprehensive life and health coverage from 15+ leading insurers. We compare, advise, and assist with claims for your peace of mind.',
+    features: ['Term & ULIP plans', 'Family floater health', 'Motor & Commercial Insurance', 'Zero-hassle claims'],
     link: '/services',
-  },
-  {
-    id: 'loans',
-    icon: 'Home',
-    title: 'Home & Personal Loans',
-    tagline: 'Best interest rates assured',
-    description: 'Access to 20+ banks and NBFCs. We negotiate superior rates and manage the entire documentation process for you.',
-    features: ['Home & personal loans', 'Loan against property', 'Business loans', 'Balance transfer'],
-    link: '/services',
-  },
-  {
-    id: 'fd',
-    icon: 'PiggyBank',
-    title: 'Fixed Deposits',
-    tagline: 'Safe, guaranteed returns',
-    description: 'Maximise your FD returns with access to the highest-interest offerings from AAA-rated banks and NBFCs.',
-    features: ['Bank & corporate FDs', 'Senior citizen rates', 'FD laddering strategy', 'Monthly payout options'],
-    link: '/services',
-  },
-  {
-    id: 'tax',
-    icon: 'FileText',
-    title: 'Tax Planning',
-    tagline: 'Save more every tax season',
-    description: 'Strategic tax planning covering 80C, 80D, HRA, NPS, and capital gains to legally minimise your tax liability.',
-    features: ['ELSS & PPF planning', 'Section 80D health benefits', 'Capital gains optimisation', 'ITR filing guidance'],
-    link: '/services',
-  },
-  {
-    id: 'financial-planning',
-    icon: 'BarChart3',
-    title: 'Financial Planning',
-    tagline: 'Your roadmap to freedom',
-    description: 'A complete, integrated financial plan — from retirement and education to wealth creation and estate succession.',
-    features: ['Retirement planning', 'Child education corpus', 'Legacy & estate planning', 'Annual review sessions'],
-    link: '/services',
+    image: '/service-insurance.png',
+    category: 'Insurance',
   },
 ];
 
@@ -68,22 +58,18 @@ const iconMap: Record<string, React.ElementType> = {
   TrendingUp, Shield, Home: HomeIcon, PiggyBank, FileText, BarChart3,
 };
 
-const gradients: Record<string, string> = {
-  'mutual-funds': 'rgba(59,130,246,0.08)',
-  insurance: 'rgba(16,185,129,0.08)',
-  loans: 'rgba(249,115,22,0.08)',
-  fd: 'rgba(234,179,8,0.08)',
-  tax: 'rgba(139,92,246,0.08)',
-  'financial-planning': 'rgba(6,182,212,0.08)',
+const iconColors: Record<string, string> = {
+  'secured-loans':      '#2563B0',
+  'unsecured-loans':    '#D97706',
+  'cv-loans':           '#E8A920',
+  insurance:            '#059669',
 };
 
-const iconColors: Record<string, string> = {
-  'mutual-funds': '#3B82F6',
-  insurance: '#10B981',
-  loans: '#F97316',
-  fd: '#EAB308',
-  tax: '#8B5CF6',
-  'financial-planning': '#06B6D4',
+const iconBgs: Record<string, string> = {
+  'secured-loans':      'rgba(37,99,176,0.1)',
+  'unsecured-loans':    'rgba(217,119,6,0.1)',
+  'cv-loans':           'rgba(232,169,32,0.1)',
+  insurance:            'rgba(5,150,105,0.1)',
 };
 
 interface ServiceCardProps { service: Service; }
@@ -91,94 +77,131 @@ interface ServiceCardProps { service: Service; }
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const Icon = iconMap[service.icon];
   const iconColor = iconColors[service.id];
-  const iconBg = gradients[service.id];
+  const iconBg    = iconBgs[service.id];
 
   return (
     <motion.div
       variants={staggerItemVariant}
-      className="group relative flex flex-col rounded-2xl bg-white border border-gray-100 hover:border-gray-200 overflow-hidden"
+      className="group relative flex flex-col rounded-2xl bg-white overflow-hidden"
       style={{
-        boxShadow: '0 1px 10px rgba(10,22,40,0.05)',
-        transition: 'box-shadow 0.3s ease, transform 0.3s ease',
+        boxShadow: '0 2px 16px rgba(13,36,71,0.07)',
+        border: '1px solid #E2E8F0',
+        transition: 'box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease',
       }}
-      whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(10,22,40,0.10)' }}
+      whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(13,36,71,0.14)' }}
     >
-      {/* Top accent line */}
+      {/* Image section */}
+      <div
+        className="relative overflow-hidden"
+        style={{ height: '185px', flexShrink: 0 }}
+      >
+        <img
+          src={service.image}
+          alt={service.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
+        {/* Blue-to-transparent overlay so card body looks clean */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, rgba(13,36,71,0.08) 0%, rgba(13,36,71,0.02) 100%)' }}
+        />
+
+        {/* Category pill on top of image */}
+        <div
+          className="absolute top-3 left-3 flex items-center gap-1.5 rounded-full px-3 py-1"
+          style={{ background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(8px)' }}
+        >
+          <div
+            className="w-5 h-5 rounded-full flex items-center justify-center"
+            style={{ background: iconBg }}
+          >
+            <Icon size={11} color={iconColor} strokeWidth={2} />
+          </div>
+          <span style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.7rem', fontWeight: 700, color: '#0D2447', letterSpacing: '0.02em' }}>
+            {service.category || service.title.split(' ')[0]}
+          </span>
+        </div>
+      </div>
+
+      {/* Top accent line on hover */}
       <div
         className="h-0.5 w-0 group-hover:w-full transition-all duration-500"
         style={{ background: `linear-gradient(90deg, transparent, ${iconColor}, transparent)` }}
       />
 
-      <div className="p-7 flex flex-col flex-1">
-        {/* Icon */}
-        <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
-          style={{ background: iconBg }}
-        >
-          <Icon size={22} color={iconColor} strokeWidth={1.8} />
-        </div>
+      {/* Card body */}
+      <div className="p-6 flex flex-col flex-1">
+
+        {/* Tagline */}
+        <p style={{
+          fontFamily: '"DM Sans", sans-serif',
+          fontSize: '0.72rem',
+          fontWeight: 700,
+          color: iconColor,
+          letterSpacing: '0.06em',
+          textTransform: 'uppercase',
+          marginBottom: '0.4rem',
+        }}>
+          {service.tagline}
+        </p>
 
         {/* Title */}
         <h3 style={{
           fontFamily: '"Playfair Display", serif',
-          fontSize: '1.1rem',
+          fontSize: '1.15rem',
           fontWeight: 700,
-          color: '#0A1628',
-          marginBottom: '0.25rem',
+          color: '#0D2447',
+          marginBottom: '0.75rem',
           lineHeight: 1.3,
         }}>
           {service.title}
         </h3>
 
-        {/* Tagline */}
-        <p style={{
-          fontFamily: '"DM Sans", sans-serif',
-          fontSize: '0.78rem',
-          fontWeight: 600,
-          color: '#C9A84C',
-          letterSpacing: '0.03em',
-          marginBottom: '0.85rem',
-        }}>
-          {service.tagline}
-        </p>
-
         {/* Description */}
         <p style={{
           fontFamily: '"DM Sans", sans-serif',
-          fontSize: '0.875rem',
-          lineHeight: 1.7,
-          color: '#495057',
-          marginBottom: '1.25rem',
+          fontSize: '0.86rem',
+          lineHeight: 1.72,
+          color: '#475569',
+          marginBottom: '1.1rem',
           flex: 1,
         }}>
           {service.description}
         </p>
 
         {/* Features */}
-        <ul className="space-y-1.5 mb-6">
+        <ul className="space-y-1.5 mb-5">
           {service.features.map((feat) => (
-            <li key={feat} className="flex items-center gap-2.5">
-              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: iconColor }} />
-              <span style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.8rem', color: '#343A40' }}>
+            <li key={feat} className="flex items-center gap-2">
+              <span
+                className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: iconBg }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: iconColor }} />
+              </span>
+              <span style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.8rem', color: '#334155' }}>
                 {feat}
               </span>
             </li>
           ))}
         </ul>
 
-        {/* Link */}
+        {/* CTA */}
         <Link
           to={service.link}
-          className="inline-flex items-center gap-1.5 group/link"
+          className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 font-semibold text-sm transition-all duration-200 hover:gap-2.5"
           style={{
             fontFamily: '"DM Sans", sans-serif',
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            color: '#C9A84C',
+            fontSize: '0.82rem',
+            fontWeight: 700,
+            color: '#ffffff',
+            background: `linear-gradient(135deg, ${iconColor}DD, ${iconColor})`,
+            boxShadow: `0 4px 14px ${iconColor}55`,
+            alignSelf: 'flex-start',
           }}
         >
           Learn More
-          <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+          <ArrowRight size={14} />
         </Link>
       </div>
     </motion.div>
@@ -187,7 +210,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
 
 const ServicesSection: React.FC = () => {
   return (
-    <section id="services" className="section-padding" style={{ background: '#F8F9FA' }}>
+    <section id="services" className="section-padding" style={{ background: '#F8FAFC' }}>
       <div className="container-site">
 
         {/* Header */}
@@ -204,7 +227,7 @@ const ServicesSection: React.FC = () => {
             fontFamily: '"Playfair Display", serif',
             fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
             fontWeight: 700,
-            color: '#0A1628',
+            color: '#0D2447',
             lineHeight: 1.2,
             marginBottom: '1rem',
           }}>
@@ -214,9 +237,9 @@ const ServicesSection: React.FC = () => {
             fontFamily: '"DM Sans", sans-serif',
             fontSize: '1rem',
             lineHeight: 1.7,
-            color: '#6C757D',
+            color: '#64748B',
           }}>
-            From wealth creation to risk protection — expert advice on every aspect of your financial life.
+            From securing ideal loans to robust risk protection — expert guidance on every aspect of your financial life.
           </p>
         </motion.div>
 
@@ -226,7 +249,7 @@ const ServicesSection: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"
         >
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
@@ -239,9 +262,9 @@ const ServicesSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center mt-12"
+          className="text-center mt-14"
         >
-          <Link to="/services" className="btn-gold">
+          <Link to="/services" className="btn-gold" style={{ fontSize: '0.95rem', padding: '0.8rem 2rem' }}>
             View All Services
             <ArrowRight size={16} />
           </Link>

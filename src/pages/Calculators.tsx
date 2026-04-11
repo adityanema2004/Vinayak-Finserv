@@ -7,7 +7,7 @@ import { calculateEMI, calculateSIP, formatIndianCurrency } from '../utils/calcu
 
 type TabType = 'emi' | 'sip';
 
-const COLORS = ['#0A1628', '#C9A84C'];
+const COLORS = ['#0D2447', '#E8A920'];
 
 interface SliderInputProps {
   label: string;
@@ -56,9 +56,9 @@ const SliderInput: React.FC<SliderInputProps> = ({
         style={{
           height: '6px',
           borderRadius: '99px',
-          background: `linear-gradient(to right, #C9A84C ${((value - min) / (max - min)) * 100}%, #E9ECEF ${((value - min) / (max - min)) * 100}%)`,
+          background: `linear-gradient(to right, #E8A920 ${((value - min) / (max - min)) * 100}%, #E9ECEF ${((value - min) / (max - min)) * 100}%)`,
           outline: 'none',
-          accentColor: '#C9A84C',
+          accentColor: '#E8A920',
         }}
       />
       <div className="flex justify-between" style={{ marginTop: '0.35rem' }}>
@@ -79,11 +79,11 @@ const ResultCard: React.FC<ResultCardProps> = ({ label, value, highlight }) => (
   <div style={{
     borderRadius: '14px',
     padding: '1.1rem 1.25rem',
-    background: highlight ? '#0A1628' : '#F8F9FA',
-    border: highlight ? 'none' : '1px solid #F1F3F5',
+    background: highlight ? '#0D2447' : '#F8F9FA',
+    border: highlight ? 'none' : '1px solid #E2E8F0',
   }}>
     <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.75rem', fontWeight: 500, color: highlight ? 'rgba(255,255,255,0.5)' : '#6C757D', marginBottom: '0.3rem' }}>{label}</p>
-    <p style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.3rem', fontWeight: 700, color: highlight ? '#C9A84C' : '#0A1628', lineHeight: 1.2 }}>{value}</p>
+    <p style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.3rem', fontWeight: 700, color: highlight ? '#E8A920' : '#0D2447', lineHeight: 1.2 }}>{value}</p>
   </div>
 );
 
@@ -93,7 +93,7 @@ const CustomTooltip = ({ active, payload }: any) => {
     return (
       <div style={{ background: '#fff', borderRadius: '10px', boxShadow: '0 4px 20px rgba(10,22,40,0.12)', border: '1px solid #F1F3F5', padding: '0.6rem 0.85rem' }}>
         <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.8rem', fontWeight: 500, color: '#343A40' }}>{payload[0].name}</p>
-        <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#C9A84C' }}>{formatIndianCurrency(payload[0].value)}</p>
+        <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#E8A920' }}>{formatIndianCurrency(payload[0].value)}</p>
       </div>
     );
   }
@@ -191,7 +191,7 @@ const EMICalculator: React.FC = () => {
         <div className="text-center mt-2">
           <p className="font-body text-gray-500 text-sm">
             Interest is{' '}
-            <strong className="text-[#C9A84C]">
+            <strong className="text-[#E8A920]">
               {result.totalAmount > 0
                 ? `${((result.totalInterest / result.totalAmount) * 100).toFixed(1)}%`
                 : '0%'}
@@ -259,7 +259,7 @@ const SIPCalculator: React.FC = () => {
         <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl flex items-start gap-2">
           <Info className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
           <p className="font-body text-xs text-amber-700">
-            Mutual fund investments are subject to market risks. Returns shown are estimated and not guaranteed.
+            Financial projections and returns shown are estimated and not guaranteed. Validated against current lending rates.
           </p>
         </div>
       </div>
@@ -294,7 +294,7 @@ const SIPCalculator: React.FC = () => {
         </ResponsiveContainer>
         <div className="text-center mt-2">
           <p className="font-body text-gray-500 text-sm">
-            Wealth gained:{' '}
+            Total Returns:{' '}
             <strong className="text-[#C9A84C]">
               {result.totalValue > 0
                 ? `${((result.estimatedReturns / result.investedAmount) * 100).toFixed(0)}%`
@@ -321,8 +321,7 @@ const Calculators: React.FC = () => {
         />
       </Helmet>
 
-      {/* Page Hero */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(160deg, #06101E 0%, #0A1628 100%)', paddingTop: '7.5rem', paddingBottom: '4.5rem' }}>
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(150deg, #0D2447 0%, #1A3A6B 55%, #2563B0 100%)', paddingTop: '7.5rem', paddingBottom: '4.5rem' }}>
         <div className="absolute inset-0 mesh-overlay" />
         <div className="absolute inset-0 grid-overlay opacity-15" />
         <div className="container-site relative z-10 text-center">
@@ -375,9 +374,9 @@ const Calculators: React.FC = () => {
                   fontWeight: 600,
                   padding: '0.6rem 1rem',
                   borderRadius: '9px',
-                  background: tab === t ? '#0A1628' : 'transparent',
+                  background: tab === t ? '#0D2447' : 'transparent',
                   color: tab === t ? '#ffffff' : '#6C757D',
-                  boxShadow: tab === t ? '0 2px 8px rgba(10,22,40,0.2)' : 'none',
+                  boxShadow: tab === t ? '0 2px 8px rgba(13,36,71,0.2)' : 'none',
                 }}
               >
                 {t === 'emi' ? <Calculator size={14} /> : <TrendingUp size={14} />}

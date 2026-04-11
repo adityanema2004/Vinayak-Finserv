@@ -31,7 +31,7 @@ const StatCounter: React.FC<StatCounterProps> = ({ stat, isLast }) => {
           fontFamily: '"Playfair Display", serif',
           fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
           fontWeight: 700,
-          color: '#C9A84C',
+          color: '#E8A920',
           letterSpacing: '-0.02em',
         }}>
           {stat.prefix}
@@ -49,7 +49,7 @@ const StatCounter: React.FC<StatCounterProps> = ({ stat, isLast }) => {
           fontFamily: '"Playfair Display", serif',
           fontSize: 'clamp(2.5rem, 5vw, 3.75rem)',
           fontWeight: 700,
-          color: '#C9A84C',
+          color: '#E8A920',
           letterSpacing: '-0.02em',
         }}>
           {stat.suffix}
@@ -87,12 +87,12 @@ const StatsSection: React.FC = () => {
     <section
       id="stats"
       className="relative overflow-hidden"
-      style={{ background: 'linear-gradient(135deg, #06101E 0%, #0A1628 50%, #0E1F3A 100%)' }}
+      style={{ background: 'linear-gradient(150deg, #0D2447 0%, #1A3A6B 55%, #1E4D8C 100%)' }}
     >
       {/* Background texture */}
       <div className="absolute inset-0 grid-overlay opacity-15 pointer-events-none" />
-      <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-[#C9A84C]/5 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-[#C9A84C]/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-[#E8A920]/8 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-[#E8A920]/8 blur-[100px] pointer-events-none" />
 
       <div className="container-site py-20 lg:py-24">
 
@@ -140,17 +140,18 @@ const StatsSection: React.FC = () => {
           className="flex flex-wrap items-center justify-center gap-3 mt-16 pt-10"
           style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}
         >
-          {['SEBI Registered Investment Advisor', 'AMFI ARN Holder', 'IRDAI Authorised'].map((badge) => (
+          {['Expert Financial Advisors', 'Trusted Financial Intermediaries', 'IRDAI Authorised'].map((badge) => (
             <span
               key={badge}
               style={{
                 fontFamily: '"DM Sans", sans-serif',
                 fontSize: '0.75rem',
-                fontWeight: 500,
-                color: 'rgba(255,255,255,0.5)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                fontWeight: 600,
+                color: 'rgba(255,255,255,0.65)',
+                border: '1px solid rgba(232,169,32,0.35)',
                 borderRadius: '50px',
                 padding: '0.35rem 1rem',
+                background: 'rgba(232,169,32,0.08)',
               }}
             >
               {badge}
