@@ -103,6 +103,13 @@ const Navbar: React.FC = () => {
             >
               Free Consultation
             </Link>
+            <Link
+              to="https://app.vinayakfinserv.com/auth/login?returnUrl=%2Fdashboard"
+              className="btn-gold"
+              style={{ fontSize: '0.82rem', padding: '0.55rem 1.35rem'}}
+            >
+              Login
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -203,6 +210,14 @@ const Navbar: React.FC = () => {
                   style={{ fontSize: '0.85rem' }}
                 >
                   Free Consultation
+                </Link>
+                <Link
+                  to="https://app.vinayakfinserv.com/auth/login?returnUrl=%2Fdashboard"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn-gold w-full justify-center"
+                  style={{ fontSize: '0.85rem', marginTop: '10px' }}
+                >
+                  Login
                 </Link>
               </div>
             </motion.div>
