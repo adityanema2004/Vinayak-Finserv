@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <title>Vinayak Finserv | Trusted Financial Partner</title>
         <meta
           name="description"
-          content="Vinayak Finserv — Expert guidance in Mutual Funds, Insurance, Loans & Tax Planning. SEBI Registered, AMFI Certified."
+          content="Vinayak Finserv — Expert guidance in Loans, Insurance & Financial Planning."
         />
       </Helmet>
 
@@ -26,8 +26,8 @@ const Home: React.FC = () => {
       <WhyChooseUs />
       <Testimonials />
 
-      {/* Gold CTA Banner */}
-      <section style={{ background: 'linear-gradient(135deg, #C9A84C 0%, #d9bc6a 60%, #C9A84C 100%)', padding: '5rem 1.25rem' }}>
+      {/* Blue CTA Banner */}
+      <section style={{ background: 'linear-gradient(150deg, #0D2447 0%, #1A3A6B 55%, #2563B0 100%)', padding: '5rem 1.25rem' }}>
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
@@ -35,11 +35,12 @@ const Home: React.FC = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.6 }}
           >
+            <span className="section-label">Get Started Today</span>
             <h2 style={{
               fontFamily: '"Playfair Display", serif',
               fontSize: 'clamp(1.7rem, 4vw, 2.3rem)',
               fontWeight: 700,
-              color: '#0A1628',
+              color: '#ffffff',
               marginBottom: '0.85rem',
               lineHeight: 1.25,
             }}>
@@ -49,27 +50,25 @@ const Home: React.FC = () => {
               fontFamily: '"DM Sans", sans-serif',
               fontSize: '1rem',
               lineHeight: 1.7,
-              color: 'rgba(10,22,40,0.72)',
+              color: 'rgba(255,255,255,0.65)',
               maxWidth: '560px',
               margin: '0 auto 2.25rem',
             }}>
               Book a free 30-minute consultation with our certified advisors. No commitment — just clarity and a personalised plan.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Link to="/contact" className="btn-navy w-full sm:w-auto justify-center">
+              <Link to="/contact" className="btn-gold w-full sm:w-auto justify-center">
                 Book Free Consultation
                 <ArrowRight size={16} />
               </Link>
-              <Link to="/calculators" className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-full px-6 py-2.5 font-semibold text-[#0A1628] border border-[#0A1628]/20 hover:bg-[#0A1628]/10 transition-all"
-                style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.875rem', background: 'rgba(255,255,255,0.25)' }}
-              >
+              <Link to="/calculators" className="btn-outline-white w-full sm:w-auto justify-center">
                 <Calculator size={16} />
                 Try Our Calculators
               </Link>
               <a
                 href="tel:+919876543210"
                 className="flex items-center gap-2 hover:underline"
-                style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.875rem', fontWeight: 600, color: '#0A1628' }}
+                style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.875rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}
               >
                 <Phone size={15} />
                 +91 98765 43210

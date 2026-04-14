@@ -14,8 +14,8 @@ const whyItems: WhyChooseItem[] = [
   {
     id: 'registered',
     icon: 'BadgeCheck',
-    title: 'SEBI & AMFI Registered',
-    description: 'Fully compliant with SEBI & AMFI regulations. Your investments are managed with complete transparency and legal accountability.',
+    title: 'Strictly Compliant',
+    description: 'Fully compliant with core industry regulations. Your investments are managed with complete transparency and legal accountability.',
   },
   {
     id: 'support',
@@ -105,17 +105,17 @@ const WhyChooseUs: React.FC = () => {
                   background: '#ffffff',
                   y: -4,
                   boxShadow: '0 8px 40px rgba(10,22,40,0.09)',
-                  borderColor: 'rgba(201,168,76,0.25)',
+                  borderColor: 'rgba(232,169,32,0.3)',
                 }}
               >
                 {/* Icon */}
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center mb-5 group-hover:bg-[#C9A84C] transition-colors duration-300"
-                  style={{ background: '#0A1628' }}
+                  style={{ background: '#0D2447' }}
                 >
                   <Icon
                     size={20}
-                    className="text-[#C9A84C] group-hover:text-[#0A1628] transition-colors duration-300"
+                    className="text-[#E8A920] group-hover:text-[#0D2447] transition-colors duration-300"
                     strokeWidth={1.7}
                   />
                 </div>
@@ -124,7 +124,7 @@ const WhyChooseUs: React.FC = () => {
                   fontFamily: '"Playfair Display", serif',
                   fontSize: '1.1rem',
                   fontWeight: 700,
-                  color: '#0A1628',
+                  color: '#0D2447',
                   marginBottom: '0.65rem',
                   lineHeight: 1.3,
                 }}>
@@ -134,7 +134,7 @@ const WhyChooseUs: React.FC = () => {
                   fontFamily: '"DM Sans", sans-serif',
                   fontSize: '0.875rem',
                   lineHeight: 1.7,
-                  color: '#6C757D',
+                  color: '#64748B',
                 }}>
                   {item.description}
                 </p>

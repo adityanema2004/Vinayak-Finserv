@@ -13,21 +13,21 @@ interface Post {
   excerpt: string;
   category: string;
   readTime: string;
-  color: string;       // accent colour for card top bar
-  bgColor: string;     // thumbnail bg gradient
+  color: string;       // accent colour for text
+  image: string;       // thumbnail image
 }
 
 const posts: Post[] = [
   {
-    id: 'sip-in-20s',
-    title: '5 Reasons to Start a SIP in Your 20s',
+    id: 'loan-business',
+    title: '5 Reasons to Leverage Business Loans for Expansion',
     date: 'March 15, 2024',
     excerpt:
-      'The power of compounding is most effective when you start early. Discover why beginning your SIP journey in your 20s can build life-changing wealth by the time you turn 40.',
-    category: 'Mutual Funds',
+      'The right financing can scale your operations exponentially. Discover why strategic business loans can accelerate your market growth and multiply profitability.',
+    category: 'Analysis',
     readTime: '5 min read',
-    color: '#3B82F6',
-    bgColor: 'linear-gradient(135deg, #1D4ED8 0%, #4338CA 100%)',
+    color: '#2563EB',
+    image: '/service-loans.png',
   },
   {
     id: 'term-vs-whole',
@@ -37,170 +37,145 @@ const posts: Post[] = [
       'Choosing between term and whole life insurance is one of the most important financial decisions. We break down costs, benefits, and which one suits different life stages.',
     category: 'Insurance',
     readTime: '7 min read',
-    color: '#10B981',
-    bgColor: 'linear-gradient(135deg, #059669 0%, #0D9488 100%)',
+    color: '#059669',
+    image: '/service-insurance.png',
   },
   {
-    id: 'tax-80c',
-    title: 'How to Save Tax Under Section 80C in 2024',
+    id: 'personal-loan-guide',
+    title: '5 Factors Lenders Check Before Approving Your Personal Loan',
     date: 'February 10, 2024',
     excerpt:
-      'Section 80C allows you to claim deductions up to \u20b91.5 lakh per year. Here\'s a comprehensive guide to all eligible investments and expenses to maximise your tax saving.',
-    category: 'Tax Planning',
+      'Understanding what banks look for can significantly improve your loan approval odds. Here\'s a comprehensive guide to CIBIL scores, FOIR, and documentation requirements.',
+    category: 'Analysis',
     readTime: '8 min read',
-    color: '#8B5CF6',
-    bgColor: 'linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%)',
+    color: '#7C3AED',
+    image: '/service-financial-planning.png',
   },
   {
     id: 'home-loan-cg',
-    title: 'Home Loan Tips for First-Time Buyers in Chhattisgarh',
+    title: 'Home Loan Tips for First-Time Buyers in India',
     date: 'January 22, 2024',
     excerpt:
-      "Buying your first home is one of life's biggest milestones. This guide covers eligibility, documentation, the best lenders in CG, and how to negotiate the lowest possible interest rate.",
+      "Buying your first home is one of life's biggest milestones. This guide covers eligibility, documentation, the best lenders, and how to negotiate the lowest possible interest rate.",
     category: 'Loans',
     readTime: '6 min read',
-    color: '#F97316',
-    bgColor: 'linear-gradient(135deg, #EA580C 0%, #DC2626 100%)',
+    color: '#EA580C',
+    image: '/service-loans.png',
   },
   {
-    id: 'nav-guide',
-    title: 'Understanding Mutual Fund NAV — A Beginner\'s Guide',
+    id: 'secured-loans-guide',
+    title: 'Understanding Secured Loans — A Beginner\'s Guide',
     date: 'January 5, 2024',
     excerpt:
-      "NAV (Net Asset Value) is the price of one unit of a mutual fund. Many new investors misunderstand it. This guide explains NAV, how it's calculated, and why it shouldn't be your only deciding factor.",
-    category: 'Mutual Funds',
+      "Collateral valuation is a core component of secured loans. Many new borrowers misunderstand the appraisal process. This guide explains Loan-to-Value (LTV), how it's calculated, and why it matters.",
+    category: 'Secured Loans',
     readTime: '4 min read',
-    color: '#06B6D4',
-    bgColor: 'linear-gradient(135deg, #0891B2 0%, #2563EB 100%)',
+    color: '#0891B2',
+    image: '/service-financial-planning.png',
   },
   {
-    id: 'fd-vs-mf',
-    title: 'Fixed Deposit vs Mutual Fund — Where Should You Invest?',
+    id: 'secured-vs-unsecured',
+    title: 'Secured vs Unsecured Business Loans — Which Should You Choose?',
     date: 'December 18, 2023',
     excerpt:
-      'Both FDs and mutual funds have their place in a smart portfolio. We compare returns, risk, liquidity, and tax treatment to help you decide what\'s right for your financial goals.',
-    category: 'Investing',
+      'Both secured and unsecured loans have their place in business financing. We compare interest rates, collateral, processing time, and loan size to help you decide what\'s best for your company.',
+    category: 'Loans',
     readTime: '6 min read',
-    color: '#C9A84C',
-    bgColor: 'linear-gradient(135deg, #B45309 0%, #92400E 100%)',
+    color: '#C9891A',
+    image: '/service-fd.png',
   },
 ];
 
 const categories = ['All', ...Array.from(new Set(posts.map((p) => p.category)))];
 
 /* ─── Category badge colours ─────────────────────────────────────────────── */
-const badgeStyle: Record<string, { bg: string; text: string; border: string }> = {
-  'Mutual Funds': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
-  Insurance:      { bg: 'rgba(16,185,129,0.1)',  text: '#059669', border: 'rgba(16,185,129,0.2)'  },
-  'Tax Planning': { bg: 'rgba(139,92,246,0.1)',  text: '#7C3AED', border: 'rgba(139,92,246,0.2)'  },
-  Loans:          { bg: 'rgba(249,115,22,0.1)',  text: '#EA580C', border: 'rgba(249,115,22,0.2)'  },
-  Investing:      { bg: 'rgba(201,168,76,0.12)', text: '#92400E', border: 'rgba(201,168,76,0.25)' },
-};
+// const badgeStyle: Record<string, { bg: string; text: string; border: string }> = {
+//   'Secured Loans': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
+//   'Analysis': { bg: 'rgba(59,130,246,0.1)',  text: '#2563EB', border: 'rgba(59,130,246,0.2)'  },
+//   Insurance:      { bg: 'rgba(16,185,129,0.1)',  text: '#059669', border: 'rgba(16,185,129,0.2)'  },
+
+//   Loans:          { bg: 'rgba(249,115,22,0.1)',  text: '#EA580C', border: 'rgba(249,115,22,0.2)'  },
+//   Investing:      { bg: 'rgba(232,169,32,0.12)', text: '#C9891A', border: 'rgba(232,169,32,0.25)' },
+// };
 
 /* ─── Blog card ──────────────────────────────────────────────────────────── */
 const BlogCard: React.FC<{ post: Post }> = ({ post }) => {
-  const badge = badgeStyle[post.category] ?? { bg: '#F1F3F5', text: '#495057', border: '#E9ECEF' };
 
   return (
     <motion.article
       variants={staggerItemVariant}
       className="group flex flex-col rounded-2xl overflow-hidden bg-white"
       style={{
-        border: '1px solid #EAECEF',
-        boxShadow: '0 1px 12px rgba(10,22,40,0.05)',
-        transition: 'transform 0.28s ease, box-shadow 0.28s ease',
+        border: '1px solid #E2E8F0',
+        boxShadow: '0 2px 16px rgba(13,36,71,0.05)',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
       }}
-      whileHover={{ y: -6, boxShadow: '0 16px 48px rgba(10,22,40,0.11)' }}
+      whileHover={{ y: -6, boxShadow: '0 20px 60px rgba(13,36,71,0.10)' }}
     >
       {/* Thumbnail */}
-      <div
-        className="relative h-44 flex items-center justify-center overflow-hidden flex-shrink-0"
-        style={{ background: post.bgColor }}
-      >
-        {/* Grid texture overlay */}
-        <div className="absolute inset-0 grid-overlay opacity-20" />
-        {/* Large letter */}
-        <span
-          className="select-none relative z-0"
-          style={{
-            fontFamily: '"Playfair Display", serif',
-            fontSize: '6rem',
-            fontWeight: 700,
-            color: 'rgba(255,255,255,0.15)',
-            lineHeight: 1,
-          }}
-        >
-          {post.title.charAt(0)}
-        </span>
+      <div className="relative h-48 flex items-center justify-center overflow-hidden flex-shrink-0 bg-[#F8FAFC]">
+        <img 
+          src={post.image} 
+          alt={post.title} 
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(13,36,71,0.6) 0%, transparent 100%)' }} />
+        
         {/* Category pill on thumbnail */}
         <div className="absolute top-3 left-3">
           <span
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full text-white"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-white"
             style={{
               fontFamily: '"DM Sans", sans-serif',
               fontSize: '0.72rem',
               fontWeight: 600,
               letterSpacing: '0.03em',
-              background: 'rgba(0,0,0,0.3)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'rgba(13,36,71,0.6)',
+              backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255,255,255,0.15)',
             }}
           >
             <BookOpen size={10} />
             {post.category}
           </span>
         </div>
+        
         {/* Read time pill */}
-        <div className="absolute top-3 right-3">
+        <div className="absolute bottom-3 right-3">
           <span
             style={{
               fontFamily: '"DM Sans", sans-serif',
               fontSize: '0.7rem',
               fontWeight: 500,
-              color: 'rgba(255,255,255,0.8)',
-              background: 'rgba(0,0,0,0.3)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-              border: '1px solid rgba(255,255,255,0.15)',
+              color: 'rgba(255,255,255,0.9)',
+              background: 'rgba(0,0,0,0.5)',
+              backdropFilter: 'blur(4px)',
+              border: '1px solid rgba(255,255,255,0.2)',
               borderRadius: '50px',
-              padding: '0.22rem 0.6rem',
+              padding: '0.25rem 0.75rem',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.25rem',
+              gap: '0.35rem',
             }}
           >
-            <Clock size={9} />
+            <Clock size={10} />
             {post.readTime}
           </span>
         </div>
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 p-5">
-        {/* Category badge */}
-        <span
-          className="inline-flex items-center self-start mb-3 px-2.5 py-0.5 rounded-full"
-          style={{
-            fontFamily: '"DM Sans", sans-serif',
-            fontSize: '0.7rem',
-            fontWeight: 600,
-            background: badge.bg,
-            color: badge.text,
-            border: `1px solid ${badge.border}`,
-          }}
-        >
-          {post.category}
-        </span>
-
+      <div className="flex flex-col flex-1 p-6">
+        {/* Category badge (optional if retained, but we placed it on the image instead) */}
+        
         {/* Title */}
         <h2
-          className="group-hover:text-[#C9A84C] transition-colors duration-200 line-clamp-2 mb-2.5 flex-0"
+          className="group-hover:text-[#E8A920] transition-colors duration-200 line-clamp-2 mb-3 flex-0"
           style={{
             fontFamily: '"Playfair Display", serif',
-            fontSize: '1.05rem',
+            fontSize: '1.2rem',
             fontWeight: 700,
-            color: '#0A1628',
+            color: '#0D2447',
             lineHeight: 1.35,
           }}
         >
@@ -212,10 +187,10 @@ const BlogCard: React.FC<{ post: Post }> = ({ post }) => {
           className="line-clamp-3 flex-1"
           style={{
             fontFamily: '"DM Sans", sans-serif',
-            fontSize: '0.845rem',
+            fontSize: '0.9rem',
             lineHeight: 1.7,
-            color: '#6C757D',
-            marginBottom: '1.1rem',
+            color: '#475569',
+            marginBottom: '1.25rem',
           }}
         >
           {post.excerpt}
@@ -224,23 +199,23 @@ const BlogCard: React.FC<{ post: Post }> = ({ post }) => {
         {/* Footer */}
         <div
           className="flex items-center justify-between"
-          style={{ paddingTop: '0.85rem', borderTop: '1px solid #F1F3F5' }}
+          style={{ paddingTop: '1rem', borderTop: '1px solid #E2E8F0' }}
         >
           <div className="flex items-center gap-3">
             <span
               className="flex items-center gap-1.5"
-              style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.75rem', color: '#ADB5BD' }}
+              style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.8rem', color: '#64748B' }}
             >
-              <Calendar size={12} />
+              <Calendar size={13} />
               {post.date}
             </span>
           </div>
           <button
-            className="flex items-center gap-1 group/link transition-colors"
-            style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.78rem', fontWeight: 600, color: post.color }}
+            className="flex items-center gap-1.5 group/link transition-colors"
+            style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.82rem', fontWeight: 700, color: '#1A3A6B' }}
           >
             Read More
-            <ArrowRight size={13} className="group-hover/link:translate-x-1 transition-transform duration-200" />
+            <ArrowRight size={14} className="group-hover/link:translate-x-1.5 transition-transform duration-200" />
           </button>
         </div>
       </div>
@@ -266,7 +241,7 @@ const Blog: React.FC = () => {
         <title>Blog & Insights | Vinayak Finserv</title>
         <meta
           name="description"
-          content="Financial insights, tips, and guides from Vinayak Finserv's certified advisors. Learn about SIP, insurance, tax planning, home loans, and more."
+          content="Financial insights, tips, and guides from Vinayak Finserv's certified advisors. Learn about SIP, insurance, loans, and more."
         />
       </Helmet>
 
@@ -274,13 +249,13 @@ const Blog: React.FC = () => {
       <section
         className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(160deg, #06101E 0%, #0A1628 100%)',
+          background: 'linear-gradient(150deg, #0D2447 0%, #1A3A6B 55%, #2563B0 100%)',
           paddingTop: '7.5rem',
           paddingBottom: '5rem',
         }}
       >
         <div className="absolute inset-0 mesh-overlay pointer-events-none" />
-        <div className="absolute inset-0 grid-overlay opacity-15 pointer-events-none" />
+        <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
 
         <div className="container-site relative z-10 text-center">
           <motion.span
@@ -315,10 +290,10 @@ const Blog: React.FC = () => {
             style={{
               fontFamily: '"DM Sans", sans-serif',
               fontSize: '1rem',
-              color: 'rgba(255,255,255,0.6)',
+              color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.7,
               maxWidth: '560px',
-              margin: '0 auto 2rem',
+              margin: '0 auto 2.5rem',
             }}
           >
             Expert analysis and practical guides to help you make smarter financial decisions.
@@ -330,11 +305,11 @@ const Blog: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.24 }}
             className="relative mx-auto"
-            style={{ maxWidth: '420px' }}
+            style={{ maxWidth: '460px' }}
           >
             <Search
-              size={16}
-              style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.35)' }}
+              size={18}
+              style={{ position: 'absolute', left: '1.25rem', top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.4)' }}
             />
             <input
               type="search"
@@ -344,46 +319,48 @@ const Blog: React.FC = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{
                 width: '100%',
-                paddingLeft: '2.75rem',
-                paddingRight: '1.25rem',
-                paddingTop: '0.75rem',
-                paddingBottom: '0.75rem',
+                paddingLeft: '3rem',
+                paddingRight: '1.5rem',
+                paddingTop: '0.85rem',
+                paddingBottom: '0.85rem',
                 borderRadius: '50px',
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.18)',
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.25)',
                 color: '#ffffff',
                 fontFamily: '"DM Sans", sans-serif',
-                fontSize: '0.875rem',
+                fontSize: '0.95rem',
                 outline: 'none',
               }}
-              className="placeholder:text-white/35 focus:border-[#C9A84C]/60 focus:bg-white/12 transition-all"
+              className="placeholder:text-white/40 focus:border-[#E8A920] focus:bg-white/15 transition-all shadow-lg"
             />
           </motion.div>
         </div>
       </section>
 
       {/* ── Category Filter Bar ── */}
-      <div style={{ background: '#ffffff', borderBottom: '1px solid #F1F3F5', position: 'sticky', top: '68px', zIndex: 30 }}>
+      <div style={{ background: '#ffffff', borderBottom: '1px solid #E2E8F0', position: 'sticky', top: '70px', zIndex: 30 }}>
         <div className="container-site">
-          <div className="flex items-center gap-2 overflow-x-auto py-3 no-scrollbar">
+          <div className="flex items-center gap-2 overflow-x-auto py-4 no-scrollbar">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 style={{
                   fontFamily: '"DM Sans", sans-serif',
-                  fontSize: '0.8rem',
+                  fontSize: '0.85rem',
                   fontWeight: 600,
-                  padding: '0.35rem 1rem',
+                  padding: '0.4rem 1.15rem',
                   borderRadius: '50px',
                   whiteSpace: 'nowrap',
                   flexShrink: 0,
                   transition: 'all 0.2s ease',
-                  background: activeCategory === cat ? '#0A1628' : '#F8F9FA',
-                  color: activeCategory === cat ? '#ffffff' : '#6C757D',
-                  border: activeCategory === cat ? 'none' : '1px solid #EAECEF',
+                  background: activeCategory === cat ? '#0D2447' : '#F8FAFC',
+                  color: activeCategory === cat ? '#ffffff' : '#475569',
+                  border: activeCategory === cat ? '1px solid #0D2447' : '1px solid #E2E8F0',
                   cursor: 'pointer',
+                  boxShadow: activeCategory === cat ? '0 4px 12px rgba(13,36,71,0.15)' : 'none',
                 }}
+                className={activeCategory !== cat ? 'hover:bg-blue-50 hover:text-[#0D2447] hover:border-[#0D2447]/20' : ''}
               >
                 {cat}
               </button>
@@ -393,12 +370,12 @@ const Blog: React.FC = () => {
       </div>
 
       {/* ── Blog Grid ── */}
-      <section className="section-padding" style={{ background: '#F8F9FA' }}>
+      <section className="section-padding" style={{ background: '#F8FAFC' }}>
         <div className="container-site">
 
           {/* Results count */}
-          <div style={{ marginBottom: '1.75rem' }}>
-            <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.82rem', color: '#ADB5BD' }}>
+          <div style={{ marginBottom: '2rem' }}>
+            <p style={{ fontFamily: '"DM Sans", sans-serif', fontSize: '0.85rem', color: '#64748B', fontWeight: 500 }}>
               {filtered.length === 0
                 ? 'No articles found'
                 : `Showing ${filtered.length} article${filtered.length !== 1 ? 's' : ''}${activeCategory !== 'All' ? ` in ${activeCategory}` : ''}`}
@@ -406,23 +383,23 @@ const Blog: React.FC = () => {
           </div>
 
           {filtered.length === 0 ? (
-            <div className="text-center py-24">
+            <div className="text-center py-20 bg-white rounded-3xl border border-[#E2E8F0]">
               <p
                 style={{
                   fontFamily: '"Playfair Display", serif',
                   fontSize: '1.5rem',
-                  color: '#ADB5BD',
-                  marginBottom: '0.5rem',
+                  color: '#64748B',
+                  marginBottom: '1rem',
                 }}
               >
                 No articles match your search
               </p>
               <button
                 onClick={() => { setSearchTerm(''); setActiveCategory('All'); }}
-                className="btn-gold mt-4"
-                style={{ fontSize: '0.82rem' }}
+                className="btn-gold px-6"
+                style={{ fontSize: '0.9rem' }}
               >
-                Clear filters
+                Clear all filters
               </button>
             </div>
           ) : (
@@ -431,7 +408,7 @@ const Blog: React.FC = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.05 }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {filtered.map((post) => (
                 <BlogCard key={post.id} post={post} />
@@ -445,60 +422,65 @@ const Blog: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative overflow-hidden rounded-2xl mt-16"
-            style={{ background: 'linear-gradient(135deg, #0A1628 0%, #0E1F3A 100%)', padding: 'clamp(2rem, 5vw, 3.5rem)' }}
+            className="relative overflow-hidden rounded-3xl mt-20"
+            style={{ background: 'linear-gradient(135deg, #0D2447 0%, #1A3A6B 100%)', padding: 'clamp(2.5rem, 5vw, 4.5rem)' }}
           >
-            <div className="absolute inset-0 grid-overlay opacity-15 pointer-events-none" />
+            <div className="absolute inset-0 grid-overlay opacity-10 pointer-events-none" />
             <div
-              className="absolute -top-20 -right-20 w-64 h-64 rounded-full pointer-events-none"
-              style={{ background: 'radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)' }}
+              className="absolute -top-20 -right-20 w-80 h-80 rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(232,169,32,0.15) 0%, transparent 70%)' }}
+            />
+            <div
+              className="absolute -bottom-20 -left-20 w-60 h-60 rounded-full pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(232,169,32,0.1) 0%, transparent 70%)' }}
             />
 
-            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8">
+            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-14">
               <div className="lg:flex-1 text-center lg:text-left">
                 <h3
                   style={{
                     fontFamily: '"Playfair Display", serif',
-                    fontSize: 'clamp(1.4rem, 3vw, 2rem)',
+                    fontSize: 'clamp(1.6rem, 3.5vw, 2.25rem)',
                     fontWeight: 700,
                     color: '#ffffff',
-                    marginBottom: '0.6rem',
+                    marginBottom: '0.75rem',
                     lineHeight: 1.25,
                   }}
                 >
-                  Never Miss a Financial Insight
+                  Never Miss a Financial Update
                 </h3>
                 <p
                   style={{
                     fontFamily: '"DM Sans", sans-serif',
-                    fontSize: '0.95rem',
-                    color: 'rgba(255,255,255,0.55)',
+                    fontSize: '1rem',
+                    color: 'rgba(255,255,255,0.7)',
                     lineHeight: 1.65,
-                    maxWidth: '480px',
+                    maxWidth: '500px',
+                    margin: '0 auto lg:mx-0',
                   }}
                 >
-                  Get expert financial tips delivered to your inbox every two weeks. Join 2,000+ subscribers.
+                  Get expert financial tips delivered to your inbox every two weeks. Join 2,000+ informed subscribers today.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-2.5 w-full lg:w-auto" style={{ minWidth: '320px' }}>
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto" style={{ minWidth: '340px' }}>
                 <input
                   type="email"
                   id="newsletter-email"
-                  placeholder="your@email.com"
-                  className="flex-1 transition-all placeholder:text-white/35 focus:border-[#C9A84C]/60"
+                  placeholder="Enter your email address"
+                  className="flex-1 transition-all placeholder:text-white/40 focus:border-[#E8A920] focus:bg-white/10"
                   style={{
-                    padding: '0.7rem 1.1rem',
+                    padding: '0.85rem 1.25rem',
                     borderRadius: '50px',
                     background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.16)',
+                    border: '1px solid rgba(255,255,255,0.2)',
                     color: '#ffffff',
                     fontFamily: '"DM Sans", sans-serif',
-                    fontSize: '0.875rem',
+                    fontSize: '0.95rem',
                     outline: 'none',
                   }}
                 />
-                <button className="btn-gold" style={{ fontSize: '0.85rem', whiteSpace: 'nowrap' }}>
+                <button className="btn-gold" style={{ fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
                   Subscribe
                 </button>
               </div>

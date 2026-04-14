@@ -94,13 +94,12 @@ const officeLocations: OfficeLocation[] = [
 ];
 
 const serviceOptions = [
-  'Mutual Funds & SIP',
+  'Commercial Vehicle Loans',
   'Life Insurance',
   'Health Insurance',
   'Home Loan',
   'Personal Loan',
-  'Fixed Deposit',
-  'Tax Planning',
+  'Business Loan',
   'Financial Planning',
   'Other',
 ];
@@ -155,7 +154,7 @@ const Contact: React.FC = () => {
       <section
         className="relative overflow-hidden"
         style={{
-          background: 'linear-gradient(160deg, #06101E 0%, #0A1628 100%)',
+          background: 'linear-gradient(150deg, #0D2447 0%, #1A3A6B 55%, #2563B0 100%)',
           paddingTop: '7.5rem',
           paddingBottom: '4.5rem',
         }}
@@ -235,7 +234,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="bg-white rounded-3xl p-8 shadow-[0_4px_40px_rgba(10,22,40,0.08)] border border-gray-100"
             >
-              <h2 className="font-heading text-[#0A1628] text-2xl font-bold mb-2">
+              <h2 className="font-heading text-[#0D2447] text-2xl font-bold mb-2">
                 Send Us a Message
               </h2>
               <p className="font-body text-gray-500 text-sm mb-8">
@@ -256,7 +255,7 @@ const Contact: React.FC = () => {
                     className={`w-full px-4 py-3 rounded-xl border font-body text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all ${
                       errors.fullName
                         ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300'
-                        : 'border-gray-200 focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20'
+                        : 'border-gray-200 focus:border-[#E8A920] focus:ring-2 focus:ring-[#E8A920]/20'
                     }`}
                   />
                   {errors.fullName && (
@@ -279,7 +278,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-xl border font-body text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all ${
                         errors.phone
                           ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300'
-                          : 'border-gray-200 focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20'
+                          : 'border-gray-200 focus:border-[#E8A920] focus:ring-2 focus:ring-[#E8A920]/20'
                       }`}
                     />
                     {errors.phone && (
@@ -298,7 +297,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 rounded-xl border font-body text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all ${
                         errors.email
                           ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300'
-                          : 'border-gray-200 focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20'
+                          : 'border-gray-200 focus:border-[#E8A920] focus:ring-2 focus:ring-[#E8A920]/20'
                       }`}
                     />
                     {errors.email && (
@@ -318,7 +317,7 @@ const Contact: React.FC = () => {
                     className={`w-full px-4 py-3 rounded-xl border font-body text-sm text-gray-800 outline-none transition-all bg-white appearance-none ${
                       errors.service
                         ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300'
-                        : 'border-gray-200 focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20'
+                        : 'border-gray-200 focus:border-[#E8A920] focus:ring-2 focus:ring-[#E8A920]/20'
                     }`}
                     defaultValue=""
                   >
@@ -345,7 +344,7 @@ const Contact: React.FC = () => {
                     className={`w-full px-4 py-3 rounded-xl border font-body text-sm text-gray-800 placeholder:text-gray-400 outline-none transition-all resize-none ${
                       errors.message
                         ? 'border-red-400 bg-red-50 focus:ring-2 focus:ring-red-300'
-                        : 'border-gray-200 focus:border-[#C9A84C] focus:ring-2 focus:ring-[#C9A84C]/20'
+                        : 'border-gray-200 focus:border-[#E8A920] focus:ring-2 focus:ring-[#E8A920]/20'
                     }`}
                   />
                   {errors.message && (
@@ -394,10 +393,10 @@ const Contact: React.FC = () => {
               {/* Office Info */}
               <div className="bg-white rounded-3xl p-6 shadow-[0_4px_40px_rgba(10,22,40,0.08)] border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-heading text-[#0A1628] text-lg font-bold">
+                  <h3 className="font-heading text-[#0D2447] text-lg font-bold">
                     {selectedOffice.city} {selectedOffice.isHeadquarters && '(HQ)'}
                   </h3>
-                  <span className="font-body text-xs text-[#C9A84C] border border-[#C9A84C]/30 px-2 py-0.5 rounded-full">
+                  <span className="font-body text-xs text-[#E8A920] border border-[#E8A920]/30 px-2 py-0.5 rounded-full">
                     {selectedOffice.state}
                   </span>
                 </div>
@@ -409,9 +408,9 @@ const Contact: React.FC = () => {
                     { icon: Clock, text: selectedOffice.hours },
                   ].map(({ icon: Icon, text, href }) => (
                     <li key={text} className="flex items-start gap-3">
-                      <Icon className="w-4 h-4 text-[#C9A84C] mt-0.5 flex-shrink-0" />
+                      <Icon className="w-4 h-4 text-[#E8A920] mt-0.5 flex-shrink-0" />
                       {href ? (
-                        <a href={href} className="font-body text-sm text-gray-600 hover:text-[#0A1628] transition-colors">
+                        <a href={href} className="font-body text-sm text-gray-600 hover:text-[#0D2447] transition-colors">
                           {text}
                         </a>
                       ) : (
@@ -436,10 +435,10 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <span className="inline-block font-body text-[#C9A84C] font-semibold text-sm tracking-widest uppercase mb-3">
+            <span className="inline-block font-body text-[#E8A920] font-semibold text-sm tracking-widest uppercase mb-3">
               Our Network
             </span>
-            <h2 className="font-heading text-[#0A1628] text-3xl sm:text-4xl font-bold">
+            <h2 className="font-heading text-[#0D2447] text-3xl sm:text-4xl font-bold">
               Offices Across India
             </h2>
           </motion.div>
@@ -461,16 +460,16 @@ const Contact: React.FC = () => {
                 }}
                 className={`group text-left w-full p-6 rounded-2xl border transition-all duration-300 hover:-translate-y-1 ${
                   selectedOffice.id === office.id
-                    ? 'bg-[#0A1628] border-[#0A1628] shadow-[0_8px_40px_rgba(10,22,40,0.2)]'
-                    : 'bg-gray-50 border-gray-100 hover:bg-white hover:border-[#C9A84C]/30 hover:shadow-[0_8px_32px_rgba(10,22,40,0.08)]'
+                    ? 'bg-[#0D2447] border-[#0D2447] shadow-[0_8px_40px_rgba(13,36,71,0.2)]'
+                    : 'bg-gray-50 border-gray-100 hover:bg-white hover:border-[#E8A920]/30 hover:shadow-[0_8px_32px_rgba(13,36,71,0.08)]'
                 }`}
               >
                 <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className={`font-heading font-semibold text-lg mb-0.5 ${selectedOffice.id === office.id ? 'text-[#C9A84C]' : 'text-[#0A1628]'}`}>
+                    <h3 className={`font-heading font-semibold text-lg mb-0.5 ${selectedOffice.id === office.id ? 'text-[#E8A920]' : 'text-[#0D2447]'}`}>
                       {office.city}
                       {office.isHeadquarters && (
-                        <span className="ml-2 text-xs font-body font-medium text-[#C9A84C] bg-[#C9A84C]/10 px-2 py-0.5 rounded-full">
+                        <span className="ml-2 text-xs font-body font-medium text-[#E8A920] bg-[#E8A920]/10 px-2 py-0.5 rounded-full">
                           HQ
                         </span>
                       )}
@@ -479,7 +478,7 @@ const Contact: React.FC = () => {
                       {office.state}
                     </span>
                   </div>
-                  <MapPin className={`w-5 h-5 flex-shrink-0 mt-0.5 ${selectedOffice.id === office.id ? 'text-[#C9A84C]' : 'text-gray-400 group-hover:text-[#C9A84C]'} transition-colors`} />
+                  <MapPin className={`w-5 h-5 flex-shrink-0 mt-0.5 ${selectedOffice.id === office.id ? 'text-[#E8A920]' : 'text-gray-400 group-hover:text-[#E8A920]'} transition-colors`} />
                 </div>
                 <p className={`font-body text-sm mb-3 leading-relaxed ${selectedOffice.id === office.id ? 'text-white/70' : 'text-gray-600'}`}>
                   {office.address}
@@ -487,7 +486,7 @@ const Contact: React.FC = () => {
                 <a
                   href={`tel:${office.phone.replace(/\s/g, '')}`}
                   onClick={(e) => e.stopPropagation()}
-                  className={`font-body text-sm font-medium flex items-center gap-1.5 ${selectedOffice.id === office.id ? 'text-[#C9A84C]' : 'text-[#C9A84C]'} hover:underline`}
+                  className={`font-body text-sm font-medium flex items-center gap-1.5 ${selectedOffice.id === office.id ? 'text-[#E8A920]' : 'text-[#E8A920]'} hover:underline`}
                 >
                   <Phone className="w-3.5 h-3.5" />
                   {office.phone}
