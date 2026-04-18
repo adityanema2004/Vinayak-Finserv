@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import {
   TrendingUp, Shield, Home as HomeIcon, FileText,
   CheckCircle2, ArrowRight, Phone, X, ChevronDown,
-  Info, Percent, Clock, Users, BadgeCheck, Star,
-  AlertCircle, FileCheck, CreditCard, Building2,
-  Car, Heart, Stethoscope, Zap,
+  Info, Percent, Clock, Users, BadgeCheck, Star, FileCheck, Heart, Zap,
 } from 'lucide-react';
 import { staggerContainerVariant, staggerItemVariant } from '../hooks/useScrollReveal';
 
