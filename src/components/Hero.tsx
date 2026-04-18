@@ -71,6 +71,7 @@ const Hero: React.FC = () => {
               opacity: 0.14,
               zIndex: 0,
               pointerEvents: 'none',
+              marginTop: '25px',
             }}
           />
 
@@ -79,44 +80,8 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center z-10 relative w-full"
-          style={{ width: '100%', maxWidth: '100%' }}
+          style={{ width: '100%', maxWidth: '100%', marginTop: '50px'}}
         >
-          {/* ── Giant logo mark (new) ── */}
-          {/* <LogoMark /> hidden for watermark style */}
-
-          {/* Est. pill */}
-          {/* <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              background: 'rgba(232,169,32,0.12)',
-              border: '1px solid rgba(232,169,32,0.35)',
-              borderRadius: '999px',
-              padding: '3px 12px 3px 8px',
-              marginBottom: '14px',
-            }}
-          >
-            <span
-              className="animate-pulse"
-              style={{
-                width: '6px', height: '6px',
-                borderRadius: '50%',
-                background: '#E8A920',
-                display: 'inline-block',
-              }}
-            />
-            <span style={{
-              fontFamily: '"DM Sans", sans-serif',
-              fontSize: '0.72rem',
-              fontWeight: 600,
-              color: '#F5C842',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase' as const,
-            }}>
-              Est. 2014 · Trusted Financial Partner
-            </span>
-          </div> */}
 
           {/* ── Firm name — full width with flanking lines ── */}
           <div
